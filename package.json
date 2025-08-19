@@ -1,5 +1,5 @@
 {
-  "name": "gfr-vue-country-flag",
+  "name": "vue-custom-flag-country",
   "version": "1.0.0",
   "description": "Lightweight Vue 3 flag component package with dynamic SVG support and tree-shaking",
   "license": "MIT",
