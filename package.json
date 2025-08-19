@@ -1,0 +1,30 @@
+{
+  "name": "gfr-vue-country-flag",
+  "version": "1.0.0",
+  "description": "Lightweight Vue 3 flag component package with dynamic SVG support and tree-shaking",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "gen": "node scripts/generate-flags.mjs",
+    "build": "npm run gen && rollup -c",
+    "dev": "rollup -c -w",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.22.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "^5.5.4",
+    "vite-svg-loader": "^5.1.0",
+    "vue": "^3.5.0"
+  }
+}
