@@ -1,49 +1,62 @@
 # vue-custom-flag-country
 
-A customizable Vue.js component for displaying country flags with flexible options for styling and integration.
+A customizable Vue 3 component for displaying country flags with flexible sizing and styling options.  
+Flags are dynamically imported and rendered as SVGs using ISO country codes.
 
-## Features
+## ✨ Features
 
-- Display country flags using ISO country codes
-- Easily customizable styles and sizes
-- Lightweight and dependency-free
-- Supports accessibility
+- Display flags using ISO 3166-1 alpha-2 country codes
+- Lightweight and dependency-free (pure SVG)
+- Flexible sizing:
+  - `size` (square)
+  - `width` + `height` (rectangular)
+- Optional rounded flags (perfect for circular avatars)
+- Accessibility: `aria-label` automatically added with country code
 
-## Installation
+---
+
+## 📦 Installation
 
 ```bash
 npm install vue-custom-flag-country
 # or
 yarn add vue-custom-flag-country
-```
+
 
 ## Usage
 
 ```js
-import VueCustomFlagCountry from 'vue-custom-flag-country';
+<script setup>
+import { CountryFlag } from 'vue-custom-flag-country'
+</script>
 
-export default {
-  components: {
-    VueCustomFlagCountry
-  }
-}
-```
+<template>
+  <!-- Square flag -->
+  <CountryFlag country="us" :size="32" />
 
-```html
-<vue-custom-flag-country country="US" :size="32" :rounded="true" />
+  <!-- Rectangular flag -->
+  <CountryFlag country="gb" :width="26" :height="20" />
+
+  <!-- Rounded flag -->
+  <CountryFlag country="se" :size="40" :rounded="true" />
+</template>
 ```
 
 ## Props
 
-| Prop      | Type    | Default | Description                       |
-|-----------|---------|---------|-----------------------------------|
-| country   | String  | —       | ISO 3166-1 alpha-2 country code   |
-| size      | Number  | 24      | Flag size in pixels               |
-| rounded   | Boolean | false   | Display flag with rounded borders |
+| Prop      | Type    | Default | Description                                                              |
+|-----------|---------|---------|------------------------------------------------------------------------- |
+| country   | String  | —       | Required. ISO 3166-1 alpha-2 country code (e.g., us, gb, se).            |
+| size      | Number  | —       | Sets both width & height (square). Ignored if width/height are provided. |
+| width     | Number  | —       | Explicit flag width in pixels.   |
+| height    | Number  | —       | Explicit flag height in pixels.   |
+| rounded   | Boolean | false   | Renders the flag as a circle (useful for avatars).   |
+| class     | String  | —       | Extra CSS classes applied to the flag wrapper.   |
 
 ## Accessibility
 
-- Flags include `aria-label` for screen readers.
+- Each flag automatically gets an aria-label with the country code (e.g. aria-label="US").
+- This ensures flags are readable by screen readers..
 
 ## License
 

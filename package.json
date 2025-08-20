@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-flag-country",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lightweight Vue 3 flag component package with dynamic SVG support and tree-shaking",
   "license": "MIT",
   "type": "module",
